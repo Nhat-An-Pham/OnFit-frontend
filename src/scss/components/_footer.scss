@@ -1,0 +1,32 @@
+.footer {
+  height: 100%;
+  background: linear-gradient(135deg, rgb(37, 150, 190), rgba(10,47,91,255));
+  position: relative;
+  color: #fff;
+  & h4{
+    color: #232441;
+  }
+}
+
+.footer .footer-wrapper .footer-topic {
+  margin: 40px 0 0 0;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer .footer-wrapper {
+  display: flex;
+  margin: 4em 0 0 25em;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #fff;
+  width: 50%;
+}
+
+.footer .footer-copyright {
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  margin: 10px 0 0 0;
+  padding: 0 0 10px 0;
+}
