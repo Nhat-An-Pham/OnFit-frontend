@@ -4,18 +4,24 @@ import NavUser from '../components/Navbar/NavUser'
 const User = () => {
   return (
     <div className='page__user'>
-        <NavUser />
-        <section className='user__firstSect'>
-            <h1>User's name</h1>
-            <div className='user__imageSect'>
-                <img src='' alt=''/>
-            </div>
-        </section>
-        <section className='user__secondSect'/>
-            
-        <section>
+      <NavUser />
+      <section className='user__firstSect'>
+        <h1>Hi User's name</h1>
+        <div className='user__firstSect__personalInfo'>
 
-        </section>
+        </div>
+      </section>
+      <section className='user__secondSect'>
+        <div className='user__secondSect__bodyStats'>
+
+        </div>
+      </section>
+
+      <section className='user__thirdSect'>
+        <div className='user__secondSect__courses'>
+
+        </div>
+      </section>
     </div>
   )
 }

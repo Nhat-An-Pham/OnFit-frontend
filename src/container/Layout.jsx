@@ -1,16 +1,18 @@
 import React from "react";
 import { BrowserRouter, Outlet, Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom'
+
+
 import Home from "../pages/Home";
-import Login from "../pages/Login";
+import UserLogin from "../pages/UserLogin";
 import User from "../pages/User";
-// import Main from "../components/Main/Main";
-// import GymProgram from "../components/GymProgram/GymProgram";
-// import Member from "../components/Member/Member";
-// import Classes from "../components/OurClasses/Classes";
-// import Schedule from "../components/Schedule/Schedule";
-// import Trainers from "../components/Trainers/Trainers";
-// import Contact from '../components/Contact/Contact';
+import SignUp from "../pages/SignUp"
+import Trainer from "../pages/Trainer";
+import TrainerLogin from "../pages/TrainerLogin";
+import Lessons from "../pages/Lessons";
+
+import authService from '../services/auth.service';
+import { useEffect, useState, useRef } from 'react';
 
 function Layout4Route() {
   return (
@@ -23,15 +25,50 @@ function Layout4Route() {
 }
 
 function Layout() {
+
+  const [isLogIn, setIsLogIn] = useState(localStorage.getItem('user') ? true : false);
+
+
+  useEffect(() => {
+
+    authService.isLogIn().then(
+      res => {
+        setIsLogIn(true)
+      },
+      error => {
+        console.log('call api error: ', error)
+        setIsLogIn(false)
+      }
+    )
+      .catch(error => {
+        console.log(error);
+        setIsLogIn(false)
+      });
+
+    if (!localStorage.getItem('user')) {
+      setIsLogIn(false);
+    }
+
+  }, [])
+
+
+
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<Layout4Route />}>
           {/* Pages */}
-          <Route path='/Home' exact element={<Home />} />
+          <Route path='/home' exact element={<Home />} />
           <Route path="*" exact element={<Home />} />
-          <Route path="login" exact element={<Login />} />
+          <Route path="/userlogin" exact element={<UserLogin />} />
+          <Route path="/signup" exact element={<SignUp />} />
+          <Route path="/trainerlogin" exact element={<TrainerLogin />} />
+
+
+
+          <Route path="/lessons" exact element={<Lessons />} />
           <Route path="/user" exact element={<User />} />
+          <Route path="/trainer" exact element={<Trainer />} />
         </Route>
       </Routes>
     </BrowserRouter>

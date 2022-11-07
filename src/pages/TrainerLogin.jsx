@@ -1,37 +1,37 @@
 import React from 'react'
 import NavLogin from '../components/Navbar/NavLogin';
 
-const Login = () => {
+const TrainerLogin = () => {
   return (
     <div className='page__login'>
       <NavLogin />
 
       <div class="wrapper">
-        <header>Welcome to OnFit</header>
+        <header>Hello Trainer</header>
         <form action="post">
           <div class="field email">
             <div class="input-area">
-              <input id="email" type="text" placeholder="Email Address" />
+              <input id="email" type="text" placeholder="Phone"/>
               <i class="icon fas fa-envelope"></i>
               <i class="error error-icon fas fa-exclamation-circle"></i>
             </div>
-            <div class="error error-txt">Email can't be blank</div>
+            <div class="error error-txt">Phone can't be blank</div>
           </div>
           <div class="field password">
             <div class="input-area">
-              <input id="password" type="password" placeholder="Password" />
+              <input id="password" type="password" placeholder="Password"/>
               <i class="icon fas fa-lock"></i>
               <i class="error error-icon fas fa-exclamation-circle"></i>
             </div>
             <div class="error error-txt">Password can't be blank</div>
           </div>
-          <input type="submit" value="Login" onclick="auth(event)" />
+          <button className='btn btn-primary' type="button">LOGIN</button>
+          <input type="submit" value="Login"/>
         </form>
-        <div class="sign-txt">Not yet member? <a href="/Page/Login/RegisterPage/register.html">Sign-up now</a></div>
+        <div class="sign-txt">User? <a href="/userlogin">Go to here</a></div>
       </div>
     </div>
-
   )
 }
 
-export default Login;
+export default TrainerLogin;

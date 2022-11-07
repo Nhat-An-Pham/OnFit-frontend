@@ -1,0 +1,18 @@
+home--	|user sign-up
+
+	|user login   --|userInfo (bao gồm đã có hiển thị đã chọn những course nào)
+			|choose course
+			|update body stats (số liệu cơ thể)
+			|update user info 
+
+	|trainer login--|CRUD course
+			|update trainer info
+
+	|user sign-out
+
+
+user: đăng nhập bằng EMAIL và PASSWORD
+trainer: đăng nhập bằng PHONE và PASSWORD
+
+lấy API từ:  https://bodybuilding.monoinfinity.net/swagger/index.html
+	
