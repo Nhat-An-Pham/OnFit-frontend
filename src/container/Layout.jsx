@@ -1,12 +1,9 @@
 import React from "react";
 import { BrowserRouter, Outlet, Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom'
-
-import Overlay from "../components/Main/Overlay";
-
-import NavHome from "../components/Navbar/NavHome";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import User from "../pages/User";
 // import Main from "../components/Main/Main";
 // import GymProgram from "../components/GymProgram/GymProgram";
 // import Member from "../components/Member/Member";
@@ -34,6 +31,7 @@ function Layout() {
           <Route path='/Home' exact element={<Home />} />
           <Route path="*" exact element={<Home />} />
           <Route path="login" exact element={<Login />} />
+          <Route path="/user" exact element={<User />} />
         </Route>
       </Routes>
     </BrowserRouter>

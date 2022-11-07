@@ -1,10 +1,10 @@
 import React from 'react'
-import Navbar from '../components/Navbar/Navbar';
+import NavLogin from '../components/Navbar/NavLogin';
 
 const Login = () => {
   return (
     <div className='page__login'>
-      <Navbar />
+      <NavLogin />
 
       <div class="wrapper">
         <header>Welcome to OnFit</header>
@@ -27,7 +27,7 @@ const Login = () => {
           </div>
           <input type="submit" value="Login" onclick="auth(event)" />
         </form>
-        <div class="sign-txt">Not yet member? <a href="/Page/Login/RegisterPage/register.html">Signup now</a></div>
+        <div class="sign-txt">Not yet member? <a href="/Page/Login/RegisterPage/register.html">Sign-up now</a></div>
       </div>
     </div>
 
