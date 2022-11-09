@@ -60,6 +60,20 @@ class AuthService {
   //       return response.data;
   //     });
   // }
+
+  getCustomer({id}) {
+    return axios
+      .get(API_URL + "login", {
+        id
+      })
+      .then(response => {
+        if (response.data.accessToken) {
+          localStorage.setItem("user", JSON.stringify(response.data));
+        }
+
+        return response.data;
+      });
+  }
 }
 
 export default new AuthService();

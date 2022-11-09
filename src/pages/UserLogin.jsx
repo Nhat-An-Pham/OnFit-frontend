@@ -3,6 +3,7 @@ import NavLogin from '../components/Navbar/NavLogin';
 import { useNavigate } from 'react-router-dom';
 import authService from '../services/auth.service';
 
+
 const UserLogin = () => {
 
   const [email, setEmail] = useState("");
@@ -20,14 +21,13 @@ const UserLogin = () => {
 
     authService.login(input).then(
       data => {
-        if (data.res && data.res === '1') {
-          navigate('/user');
-        } else {  // error
-          // setErr(data.mess) // that bai
-          setErr("login.error");
-        }
+        navigate('/user');
       }
-    )
+    ).catch(e => setErr(e.response.data.details.errorMessage) )
+
+    
+
+    
   }
   return (
     <div className='page__login'>
