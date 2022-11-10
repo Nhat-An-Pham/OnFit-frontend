@@ -6,4 +6,4 @@ const Trainer = () => {
   )
 }
 
-export default Trainer
+export default Trainer;

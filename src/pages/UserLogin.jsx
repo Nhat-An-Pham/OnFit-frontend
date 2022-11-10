@@ -21,11 +21,20 @@ const UserLogin = () => {
     }
 
     authService.login(input).then(
+<<<<<<< Updated upstream
       ({data}) => {
         const cookies = new Cookies();
      
         cookies.set("auth-token",data)
         navigate('/user');
+=======
+      data => {
+        if (data.res && data.res === '1') {
+          navigate('/user');
+        } else { 
+          setErr("login error");
+        }
+>>>>>>> Stashed changes
       }
     ).catch(e => setErr(e.response.data.details.errorMessage) )
 
