@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import NavLogin from '../components/Navbar/NavLogin';
 import { useNavigate } from 'react-router-dom';
 import authService from '../services/auth.service';
+import Cookies from 'universal-cookie';
 
 
 const UserLogin = () => {
@@ -20,7 +21,10 @@ const UserLogin = () => {
     }
 
     authService.login(input).then(
-      data => {
+      ({data}) => {
+        const cookies = new Cookies();
+     
+        cookies.set("auth-token",data)
         navigate('/user');
       }
     ).catch(e => setErr(e.response.data.details.errorMessage) )
