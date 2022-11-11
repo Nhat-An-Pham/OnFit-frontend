@@ -19,28 +19,21 @@ const UserLogin = () => {
       email: email,
       password: password
     }
-
     authService.login(input).then(
-<<<<<<< Updated upstream
-      ({data}) => {
+      ({ data }) => {
         const cookies = new Cookies();
-     
-        cookies.set("auth-token",data)
+        cookies.set("auth-token", data)
         navigate('/user');
-=======
-      data => {
-        if (data.res && data.res === '1') {
-          navigate('/user');
-        } else { 
-          setErr("login error");
-        }
->>>>>>> Stashed changes
       }
-    ).catch(e => setErr(e.response.data.details.errorMessage) )
-
-    
-
-    
+      //     // data => {
+      //     // if(data.res && data.res === '1'){
+      //     //   navigate('/admin/home');
+      //     // }else{  // error
+      //     //   // setErr(data.mess) // that bai
+      //     //   setErr(intl.formatMessage({id:'login.error'}))
+      //     // }
+      //     // }
+    ).catch(e => setErr(e.response.data.details.errorMessage))
   }
   return (
     <div className='page__login'>
@@ -76,7 +69,7 @@ const UserLogin = () => {
           {/* <input type="submit" value="Login" onClick={onLogin} /> */}
         </form>
         <h1>{loginStatus}</h1>
-        <div class="sign-txt">Not yet member? <a href="/signup">Sign-up now</a></div><br/>
+        <div class="sign-txt">Not yet member? <a href="/signup">Sign-up now</a></div><br />
         <div class="sign-txt">Are you a trainer? <a href="/trainerlogin">Sign-in here</a></div>
       </div>
     </div>

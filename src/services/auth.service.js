@@ -1,9 +1,11 @@
 import axios from "axios";
-const URL =  process.env.REACT_APP_API;
-const API_URL =  URL + "/api/auth/";
+import Cookies from "js-cookie";
+import { http } from "./http";
+const URL = process.env.REACT_APP_API;
+const API_URL = URL + "/api/auth/";
 
 class AuthService {
-  login({email, password}) {
+  login({ email, password }) {
     return axios
       .post(API_URL + "login", {
         email,
@@ -18,9 +20,16 @@ class AuthService {
       });
   }
 
-  logout() {
-    localStorage.removeItem("user");
-    window.location.reload();
+
+  async logout() {
+    try {
+      await axios.get(API_URL + "logout")
+      localStorage.removeItem('user')
+      localStorage.removeItem('auth-token')
+      Cookies.remove("auth-token")
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   async isLogIn() {
@@ -29,13 +38,20 @@ class AuthService {
     return await axios
       .post(API_URL + 'islogin', {
         token
-      }).then(res =>  {
-        if(res.data.res === '1'){
+      }).then(res => {
+        if (res.data.res === '1') {
           return true
         }
         return false
       })
-  
+
+
+
+  }
+  async register() {
+    const response = await axios
+      .post(API_URL + "register");
+    return response;
   }
 
   // changeUsername({username, password, newUsername}) {
@@ -61,7 +77,7 @@ class AuthService {
   //     });
   // }
 
-  getCustomer({id}) {
+  getCustomer({ id }) {
     return axios
       .get(API_URL + "login", {
         id
@@ -75,7 +91,7 @@ class AuthService {
         return response.data;
       });
   }
-  
+
 }
 
 export default new AuthService();

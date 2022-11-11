@@ -5,7 +5,7 @@ import React from "react";
 
 const GymTitle = () => (
   <h2 css={styles}>
-    CHOOSE <span>PROGRAM</span>
+    SOME OF OUR <span>PROGRAMS</span>
   </h2>
 );
 

@@ -10,6 +10,13 @@ class CustomerService {
      return response;
   }
 
+  async getCustomerInfo() {
+    const response = await http
+       .get(API_URL + "/info");
+     return response;
+  }
+
+
 
   async changePassword({ password, newPassword, confirmPassword}) {
     return http

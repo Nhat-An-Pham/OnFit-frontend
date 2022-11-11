@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Outlet, Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 
 import Home from "../pages/Home";
@@ -26,7 +27,7 @@ function Layout4Route() {
 
 function Layout() {
 
-  const [isLogIn, setIsLogIn] = useState(localStorage.getItem('user') ? true : false);
+  const [isLogIn, setIsLogIn] = useState(Cookies.get('auth-token') ? true : false);
 
 
   useEffect(() => {
@@ -45,7 +46,7 @@ function Layout() {
         setIsLogIn(false)
       });
 
-    if (!localStorage.getItem('user')) {
+    if (!Cookies.get('auth-token')) {
       setIsLogIn(false);
     }
 
@@ -60,13 +61,12 @@ function Layout() {
           {/* Pages */}
           <Route path='/home' exact element={<Home />} />
           <Route path="*" exact element={<Home />} />
-          <Route path="/userlogin" exact element={<UserLogin />} />
-          <Route path="/signup" exact element={<SignUp />} />
-          <Route path="/trainerlogin" exact element={<TrainerLogin />} />
-
-
-
           <Route path="/lessons" exact element={<Lessons />} />
+        </Route>
+        <Route element={<Outlet />}>
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/trainerlogin" element={<TrainerLogin />} />
+          <Route path="/userlogin" element={<UserLogin />} />
           <Route path="/user" exact element={<User />} />
           <Route path="/trainer" exact element={<Trainer />} />
         </Route>
