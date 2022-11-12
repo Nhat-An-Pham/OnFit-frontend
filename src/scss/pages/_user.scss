@@ -17,8 +17,9 @@
   & h1 {
     position: relative;
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 4vh;
     color: white;
+    height: 80px;
   }
 }
 
@@ -40,34 +41,50 @@
 
   &--thirdSect {
     width: 100%;
-    height: 80vh;
     border-right: 0px;
     border-left: 0px;
     flex: 3;
+    // border: 1px red solid
   }
 }
 
-.user__section__container{
+.user__section__container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.user__section__info{
-  &__container{
+.user__section__info {
+  &__container {
     margin-top: 20px;
     width: 80%;
     display: flex;
     flex-direction: column;
-    
   }
-  &__item{
+
+  &__item {
     margin: 20px 0px;
   }
 }
 
+.user__section__info {
+  &__title {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
 
-.user__logoutBtn{
+  &__desc {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border: 4px black solid;
+  }
+}
+
+
+.user__logoutBtn {
   width: 20%;
   margin-top: 20px;
   background: #ed563b;

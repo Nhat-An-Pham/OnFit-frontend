@@ -1,14 +1,16 @@
-import axios from "axios";
-const URL =  process.env.REACT_APP_API;
-const API_URL =  URL + "/api/dailyfood";
+import { http } from "./http";
 
-class CustomerService {
-  async getDailyFood() {
-    const response = await axios
-    //    .get(API_URL + `/list`);
-      .get(`https://bodybuilding.monoinfinity.net/api/Exercise/1`);
-     return response.data;
+// import axios from "axios";
+// const URL =  process.env.REACT_APP_API;
+const API_URL = "/api/dailyfood/";
+
+class DailyFoodService {
+
+  async getDailyFoodDetailByID({id}) {
+    const response = await http
+      .get(API_URL + `${id}`);
+    return response.data;
   }
 }
 
-export default new CustomerService();
+export default new DailyFoodService();

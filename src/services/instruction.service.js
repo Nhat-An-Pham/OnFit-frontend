@@ -1,10 +1,10 @@
 import {http} from "./http";
 // import axios from "axios";
 // const URL =  process.env.REACT_APP_API;
-const API_URL = "/api/Exercise";
+const API_URL = "/api/instruction";
 
 
-class ExcerciseService {
+class InstructionService {
     async getExcerciseList() {
       const response = await http
          .get(API_URL+ "/list");
@@ -12,4 +12,4 @@ class ExcerciseService {
     }
 
 }
-export default new ExcerciseService();
+export default new InstructionService();

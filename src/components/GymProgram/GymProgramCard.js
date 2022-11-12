@@ -5,10 +5,10 @@ import React from "react";
 import DumbbellIcon from "../Image/dumbbell.png";
 
 const GymProgramCard = ({ img, title, desc }) => (
-  <div css={styles} className="card">
+  <div css={styles} className="gymprogram-card">
     <img src={DumbbellIcon} alt="dumbbell" />
     {/* <img src={img} alt="dumbbell" /> */}
-    <div className="cardInfo">
+    <div className="gymprogram-cardInfo">
       <h4>{title}</h4>
       <p>{desc}</p>
       {/* <a href="#/">DISCOVER MORE</a> */}

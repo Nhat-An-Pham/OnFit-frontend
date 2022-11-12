@@ -10,7 +10,7 @@ import User from "../pages/User";
 import SignUp from "../pages/SignUp"
 import Trainer from "../pages/Trainer";
 import TrainerLogin from "../pages/TrainerLogin";
-import Lessons from "../pages/Lessons";
+import Excercises from "../pages/Excercises";
 
 import authService from '../services/auth.service';
 import { useEffect, useState, useRef } from 'react';
@@ -61,7 +61,7 @@ function Layout() {
           {/* Pages */}
           <Route path='/home' exact element={<Home />} />
           <Route path="*" exact element={<Home />} />
-          <Route path="/lessons" exact element={<Lessons />} />
+          <Route path="/excercises" exact element={<Excercises />} />
         </Route>
         <Route element={<Outlet />}>
           <Route path="/signup" element={<SignUp />} />

@@ -13,8 +13,12 @@ const LinksContainer = ({ hidden }) => {
         <Link name="ABOUT" linkTo="#trainers" />
         <Link name="CLASSES" linkTo="#ourClasses" />
         <Link name="CONTACT" linkTo="#contact" />
+        <Link name="EXCERCISES" linkTo="/excercises" />
       <ReactLink to="/userlogin">
         <Button text="SIGN UP/ SIGN IN" />
+      </ReactLink>
+      <ReactLink to="/user">
+        <Button text="About You" />
       </ReactLink>
     </div>
   );

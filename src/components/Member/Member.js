@@ -4,13 +4,16 @@ import { jsx, css } from "@emotion/core";
 import React from "react";
 import Button from "../GlobalComponents/Button";
 import GymOverlayBg from "../Image/gymOverlayBg.jpg";
+import { Link as ReactLink } from "react-router-dom";
 
 const Member = ({ text }) => (
   <section css={styles} className="member">
     <h2>
       DON’T <span>THINK</span>, BEGIN <span>TODAY</span>!
     </h2>
-    <Button text="BECOME A MEMBER" />
+    <ReactLink to="userlogin">
+      <Button text="BECOME A MEMBER" />
+    </ReactLink>
   </section>
 );
 

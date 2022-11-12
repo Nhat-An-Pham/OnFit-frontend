@@ -1,0 +1,60 @@
+.page__exercise {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background: #3853bf;
+    background-image: url("../../assets/images/Login.jpg");
+    &--wrapper{
+        padding-top: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+.page__exercise__title{
+    width: 100%;
+    text-align: center;
+    & span{
+        color: #ed563b;
+    }
+}
+
+.exerciseList__container {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.exercise__cardHolder{
+    margin: 20px 20px;
+    border: 1px black solid;
+    width: 30%;
+    height: 200px;
+    display: flex;    
+}
+
+.exercise__cardHolder__item{
+    &--img{
+        flex: 1;
+        object-fit: fit;
+        overflow: hidden;
+        border-radius: 10px;
+        & img{
+            height: 100% ;
+        }
+    }
+    &--content{
+        flex: 2;
+    }
+}
+.exercise__card__component{
+    margin-left: 20px;
+}
