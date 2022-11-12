@@ -25,8 +25,8 @@ const TrainerLogin = () => {
             </div>
             <div class="error error-txt">Password can't be blank</div>
           </div>
-          <button className='btn btn-primary' type="button">LOGIN</button>
-          <input type="submit" value="Login"/>
+          <button className='btn btn-primary' type="button" href="/trainer">LOGIN</button>
+          {/* <input type="submit" value="Login"/> */}
         </form>
         <div class="sign-txt">User? <a href="/userlogin">Go to here</a></div>
       </div>

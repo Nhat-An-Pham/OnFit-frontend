@@ -97,7 +97,7 @@ const User = () => {
       {/* first Section */}
       <section className="user__section user__section--firstSect">
         <div className="user__section__container">
-          <h1 className="user__section__title">PERSONAL INFORMATION</h1>
+          <h1 className="user__section__title">INFORMATION</h1>
           <div className="user__section__info__container">
             <div className="user__section__info__item">
               <h5>Name: {cusInfo.name} </h5>
@@ -129,7 +129,7 @@ const User = () => {
             </button>
           </EditModal>
         </div>
-        <button className="user__logoutBtn" onClick={OnLogOut}>LOGOUT </button>
+        <button className="user__logoutBtn" onClick={OnLogOut}>Log Out</button>
 
       </section>
       {/* second Section */}
