@@ -19,12 +19,12 @@ const styles = css`
   max-width: 31%;
   background: #fff;
   padding: 44px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px -6px 17px 4px rgb(0 0 0 / 10%);
   text-align: left;
-  border-radius: 4px;
+  border-radius: 20px;
   img {
     width: 100%;
-    height: 70%;
+    height: 350px;
     overflow: hidden;
   }
   h5 {

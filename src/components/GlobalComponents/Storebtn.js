@@ -19,6 +19,7 @@ const styles = css`
   transition: background 500ms ease-in-out;
   width: 20%;
   height: 3rem;
+  margin: 10px;
   &:hover {
     background: black;
     color: white;

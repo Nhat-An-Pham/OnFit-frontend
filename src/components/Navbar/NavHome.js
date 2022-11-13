@@ -23,13 +23,15 @@ const NavHome = () => {
     </nav>
   );
 };
+  // background: rgba(250, 250, 250, 0.1);
+
 
 const styles = css`
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   padding: 20px 0;
-  background: rgba(250, 250, 250, 0.1);
+  background: rgba(39, 36, 36, 0.54);
   z-index: 20;
   .container {
     display: flex;

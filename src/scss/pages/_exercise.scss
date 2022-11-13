@@ -8,7 +8,7 @@
     background: #3853bf;
     background-image: url("../../assets/images/Login.jpg");
     &--wrapper{
-        padding-top: 150px;
+        padding-top: 100px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -25,10 +25,10 @@
 }
 
 .exerciseList__container {
-    margin-top: 50px;
-    margin-bottom: 100px;
+    margin-top: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: spac;
+    
     align-items: center;
     flex-wrap: wrap;
 }
@@ -44,8 +44,8 @@
 .exercise__cardHolder__item{
     &--img{
         flex: 1;
-        object-fit: fit;
-        overflow: hidden;
+        // object-fit: fit;
+        // overflow: hidden;
         border-radius: 10px;
         & img{
             height: 100% ;

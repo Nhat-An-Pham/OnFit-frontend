@@ -15,7 +15,7 @@ const LinksContainer = ({ hidden }) => {
         <Link name="CONTACT" linkTo="#contact" />
         <Link name="EXCERCISES" linkTo="/excercises" />
       <ReactLink to="/userlogin">
-        <Button text="SIGN UP/ SIGN IN" />
+        <Button text="Join Us Now !" />
       </ReactLink>
       <ReactLink to="/user">
         <Button text="About You" />

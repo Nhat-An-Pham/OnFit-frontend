@@ -8,7 +8,9 @@ const Link = ({ name, linkTo }) => (
     {name}
   </a>
 );
-
+// &:hover {
+//   color: #232441;
+// }
 const styles = css`
   text-decoration: none;
   display: inline-block;
@@ -17,9 +19,6 @@ const styles = css`
   color: #fff;
   transition: color 600ms ease-in-out;
   &:first-of-type,
-  &:hover {
-    color: #232441;
-  }
   @media (max-width: 1000px) {
     padding: 14px 0;
     width: 100%;

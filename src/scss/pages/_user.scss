@@ -19,7 +19,7 @@
   & h1 {
     position: relative;
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 5vh;
     color: white;
     // height: 80px;
   }
@@ -32,15 +32,22 @@
     width: 50%;
     flex: 1;
     height: auto;
-    margin-top: 10px;
+    .options {
+      margin-left: 20px;
+      .btn {
+        width: 32%;
+        height: 50px;
+      }
+    }
   }
 
   &--secondSect {
     width: 50%;
-    border: 4px Black solid;
+    border: 4px white solid;
     border-top: 0px;
     border-bottom: 0px;
     flex: 1;
+    height: auto;
   }
 
   &--thirdSect {
@@ -49,6 +56,7 @@
     border-left: 0px;
     flex: 3;
     // border: 1px red solid
+    height: auto;
   }
 }
 
@@ -91,6 +99,7 @@
 .user__logoutBtn {
     width: 30%;
     height: 50px;
+    margin-left: 20px;
     border-radius: 6px;
     margin-top: 20px;
     background: #ed563b;

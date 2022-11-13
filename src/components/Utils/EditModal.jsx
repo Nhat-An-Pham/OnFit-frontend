@@ -9,7 +9,7 @@ const EditModal = ({ title, children }) => {
         data-bs-toggle="modal"
         data-bs-target="#modalEdit"
       >
-        <i className="fas fa-pencil-alt"></i>
+        <i className="fas fa-pencil-alt"></i>&nbsp;Edit
       </button>
       <div
         className="modal fade"
