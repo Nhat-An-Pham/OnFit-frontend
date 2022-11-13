@@ -15,9 +15,9 @@
 .pageTrainer__usercard {
     &--wrapper{
         border: 4px black solid;
-        height: 80vh;
-        overflow: scroll;
-        background-color: black;
+        height: 75vh;
+        overflow: auto;
+        // background-color: black;
     }
     &--container {
         margin: 20px 20px;
