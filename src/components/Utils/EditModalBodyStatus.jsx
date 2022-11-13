@@ -1,19 +1,19 @@
 import React from "react";
 
-const EditModal = ({ title, children }) => {
+const EditModalBodyStatus = ({ title, children }) => {
   return (
     <>
       <button
         type="button"
         className="btn btn-primary"
         data-bs-toggle="modal"
-        data-bs-target="#modalEdit"
+        data-bs-target="#modalEditBody"
       >
-        <i className="fas fa-pencil-alt"></i>&nbsp;Edit
+        <i className="fas fa-pencil-alt"></i>
       </button>
       <div
         className="modal fade"
-        id="modalEdit"
+        id="modalEditBody"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
         tabindex="-1"
@@ -23,7 +23,7 @@ const EditModal = ({ title, children }) => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="staticBackdropLabel">
+              <h5 className="modal-title" style={{color: "black"}} id="staticBackdropLabel">
                 {title}
               </h5>
               <button
@@ -43,9 +43,6 @@ const EditModal = ({ title, children }) => {
               >
                 Close
               </button>
-              <button type="button" className="btn btn-primary">
-                Understood
-              </button>
             </div>
           </div>
         </div>
@@ -54,4 +51,4 @@ const EditModal = ({ title, children }) => {
   );
 };
 
-export default EditModal;
+export default EditModalBodyStatus;

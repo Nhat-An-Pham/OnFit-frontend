@@ -1,0 +1,33 @@
+.page__trainer {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #3853bf;
+    background-image: url("../../assets/images/Login.jpg");
+    background-size: cover;
+
+}
+
+.pageTrainer__usercard {
+    &--wrapper{
+        border: 4px black solid;
+        height: 80vh;
+        overflow: scroll;
+        background-color: black;
+    }
+    &--container {
+        margin: 20px 20px;
+        height: auto;
+        background: white;
+        color: black;
+        border-radius: 5px;
+        & h1{
+            margin: 20px;
+            
+        }
+    }
+}

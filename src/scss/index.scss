@@ -7,7 +7,7 @@
 // //components
 // @import "./components/navbar";
 @import "./components/footer";
-// @import "./components/cards";
+@import "./components/editModal";
 
 
 //pages
@@ -16,4 +16,5 @@
 @import "./pages/login";
 @import "./pages/user";
 @import "./pages/exercise";
+@import "./pages/trainer";
 

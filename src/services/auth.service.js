@@ -20,6 +20,20 @@ class AuthService {
       });
   }
 
+  loginTrainer({ phone, password }) {
+    return axios
+      .post(API_URL + "login", {
+        phone,
+        password
+      })
+      .then(response => {
+        if (response.data.accessToken) {
+          localStorage.setItem("user", JSON.stringify(response.data));
+        }
+
+        return response.data;
+      });
+  }
 
   async logout() {
     try {
@@ -32,26 +46,22 @@ class AuthService {
     }
   }
 
-  async isLogIn() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    let token = user.accessToken
-    return await axios
-      .post(API_URL + 'islogin', {
-        token
-      }).then(res => {
-        if (res.data.res === '1') {
-          return true
-        }
-        return false
-      })
 
 
-
-  }
-  async register() {
-    const response = await axios
-      .post(API_URL + "register");
-    return response;
+  async register({name, gender, password, confirmPassword, email, phone, role, address}) {
+    const response = await http
+      .post(API_URL + "register", {
+        name,
+        gender,
+        password,
+        confirmPassword,
+        email,
+        phone,
+        role,
+        address
+      });
+      return response;
+    
   }
 
   // changeUsername({username, password, newUsername}) {

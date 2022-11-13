@@ -3,7 +3,7 @@ import ExcercisesService from '../services/excercise.service'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import NavUser from '../components/Navbar/NavUser';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
+import { CardText } from 'reactstrap';
 
 
 const Excercises = () => {
