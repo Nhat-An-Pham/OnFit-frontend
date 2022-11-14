@@ -11,7 +11,7 @@ const Member = ({ text }) => (
     <h2>
       DON’T <span>THINK</span>, BEGIN <span>TODAY</span>!
     </h2>
-    <ReactLink to="userlogin">
+    <ReactLink to="signup">
       <Button text="BECOME A MEMBER" />
     </ReactLink>
   </section>

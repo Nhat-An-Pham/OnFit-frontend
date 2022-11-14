@@ -2,19 +2,19 @@ import React from "react";
 import NavUser from "../components/Navbar/NavUser";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-// import authService from "../services/auth.service";
 import Cookies from "js-cookie";
 
-import DailyFoodService from "../services/dailyfood.service";
+
+
 import BodyStatusService from "../services/bodyStatus.service";
 import customerService from "../services/customer.service";
 import EditModalCusInfo from "../components/Utils/EditModalCusInfo";
 import DailyPlanService from "../services/dailyPlan.service";
-import FoodDetailService from "../services/foodDetail.service";
+import authService from "../services/auth.service";
 
 
 //bootstrap
-import authService from "../services/auth.service";
+
 import EditModalBodyStatus from "../components/Utils/EditModalBodyStatus";
 
 const User = () => {
@@ -22,17 +22,15 @@ const User = () => {
   const [cusInfo, setCusInfo] = useState("")
   const [bodyStat, setbodyStat] = useState("")
   const [dailyPlan, setdailyPlan] = useState([])
-  const [dailyFood, setDailyFood] = useState([])
-  const [foodDetail, setfoodDetail] = useState([])
   //auth
   const navigate = useNavigate();
-  // let isLogIn = localStorage.getItem('user') ? true : false
-  // useEffect(() => {
-  //   if (isLogIn === false) {
-  //     console.log('Test islogin', isLogIn)
-  //     navigate("/userlogin")
-  //   }
-  // }, [])
+  let isLogIn = Cookies.get("auth-token") ? true : false
+  useEffect(() => {
+    if (isLogIn === false) {
+      console.log('Test islogin', isLogIn)
+      navigate("/userlogin")
+    }
+  }, [])
   const OnLogOut = () => {
     authService.logout();
     navigate('/userlogin');
@@ -46,16 +44,32 @@ const User = () => {
   const userId = cusInfo.userId;
   const status = "1";
   const handleEmailChange = (value) => {
-    setEmail(value);
+    if (value === "") {
+      setEmail(cusInfo.email);
+    } else {
+      setEmail(value);
+    }
   }
   const handleNameChange = (value) => {
-    setName(value);
+    if (value === " ") {
+      setName(cusInfo.name);
+    } else {
+      setName(value);
+    }
   }
   const handlePhoneChange = (value) => {
-    setPhone(value);
+    if (value === " ") {
+      setPhone(cusInfo.phone);
+    } else {
+      setPhone(value);
+    }
   }
   const handleAddressChange = (value) => {
-    setAddress(value);
+    if (value === "") {
+      setAddress(cusInfo.address);
+    } else {
+      setAddress(value);
+    }
   }
 
   const handleSaveCusInfo = () => {
@@ -64,8 +78,10 @@ const User = () => {
       .then((res) => {
         console.log("success Info Update test", res);
         setCusInfo(res.data);
+        window.location.reload(false);
+        alert("Succesfully Updated")
       })
-      .catch((e) => console.log("fail Info Update test", e));
+      .catch((e) => alert("You Have to Input Everything to Update", e));
   }
 
   //update bodyStatus
@@ -79,14 +95,16 @@ const User = () => {
   }
   const handleSaveBodyStatus = () => {
     customerService
-      .postCusUpdateInfo({weight: weight, height: height })
+      .postBodyStatus({ weight: weight, height: height })
       .then((res) => {
-        console.log("success update Body Stats test", res);
-        setCusInfo(res.data);
+        console.log("success update BodyStats test", res);
+        setbodyStat(res.data);
+        window.location.reload(false);
+        alert("Succesfully Updated")
       })
-      .catch((e) => console.log("fail update Body Stats test", e));
+      .catch((e) => alert("You have to input everything to update", e));
   }
-  
+
 
 
   useEffect(() => {
@@ -113,24 +131,6 @@ const User = () => {
         setdailyPlan(res)
       })
       .catch((e) => console.log("fail Daily Plan test", e));
-    DailyFoodService
-      .getDailyFoodDetailByID({ id: `${dailyPlan.dailyFoodDetailId}` })
-      // .getDailyFoodDetailByID({ id: dailyPlan.dailyFoodDetailId })
-      .then((res) => {
-        console.log("success Get dailyFoodDetail", res);
-        setDailyFood(res)
-      })
-      .catch((e) => console.log("fail Get dailyFoodDetail", e));
-    FoodDetailService
-      // .getFoodDetailByName({ name: dailyFood.foodName })
-      .getFoodDetailByName({ name: `${dailyFood.foodName}` })
-      .then((res) => {
-        console.log("success Get FoodDetail", res);
-        setfoodDetail(res);
-      })
-      .catch((e) => console.log("fail Get FoodDetail", e));
-    // }
-
 
 
   }, []);
@@ -255,11 +255,8 @@ const User = () => {
       {/* third Section */}
       <section className="user__section user__section--thirdSect">
         <div className="user__section__container">
-          <h1 className="user__section__title">Your Courses</h1>
+          <h1 className="user__section__title">Your Current Courses</h1>
           <div className="user__section__info__container user__section__info__container--excercise">
-            <div className="user__section__info__title">
-              <h5>EXCERCISES</h5>
-            </div>
             <div className="user__section__info__desc">
 
             </div>

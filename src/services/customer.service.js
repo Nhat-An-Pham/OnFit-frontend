@@ -7,7 +7,7 @@ const API_URL = "/api/customer";
 class CustomerService {
   async getCustomer({ id }) {
     const response = await http
-      .get(API_URL, { params: { id } });
+      .get(API_URL + `?id=${id}`);
     return response;
   }
   //get Customer Info

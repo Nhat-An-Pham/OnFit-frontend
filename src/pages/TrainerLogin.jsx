@@ -25,7 +25,7 @@ const TrainerLogin = () => {
         cookies.set("auth-token", data)
         navigate('/trainer');
       }
-    ).catch(e => setErr(e.response.data.details.errorMessage))
+    ).catch(e => setErr("Login Fail"))
   }
   return (
     <div className='page__login'>

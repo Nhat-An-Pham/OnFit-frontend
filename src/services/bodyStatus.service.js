@@ -12,7 +12,7 @@ class BodyStatusService {
 
   async getBodyStatusbyID({id}) {
     const response = await http
-       .get(API_URL + `id=${id}`);
+       .get(API_URL + `/byUserId?userId=${id}`);
      return response.data;
   }
 

@@ -2,15 +2,18 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "../GlobalComponents/Button";
 import Storebtn from "../GlobalComponents/Storebtn";
 
 const Info = () => (
   <div css={styles} className="info">
     <h1>
-    WORK HARDER, <span>GET STRONGER</span>
+      WORK HARDER, <span>GET STRONGER</span>
     </h1>
-    <Button text="BECOME A MEMBER" /> 
+    <Link to="/signup">
+      <Button text="BECOME A MEMBER" />
+    </Link>
     <p>GET US ON</p>
     <Storebtn text="APPSTORE" />
     <Storebtn text="CH PLAY" />

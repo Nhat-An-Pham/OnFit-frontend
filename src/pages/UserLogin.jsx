@@ -13,7 +13,8 @@ const UserLogin = () => {
   const [loginStatus, setLoginStatus] = useState("");
 
   const navigate = useNavigate();
-  const [err, setErr] = useState("");
+  const [err, setErr] = useState([]);
+
   let onLogin = () => {
     let input = {
       email: email,
@@ -33,7 +34,7 @@ const UserLogin = () => {
       //     //   setErr(intl.formatMessage({id:'login.error'}))
       //     // }
       //     // }
-    ).catch(e => setErr(e.response.data.details.errorMessage))
+    ).catch(e => setErr("Login Fail"))
   }
   return (
     <div className='page__login'>
@@ -60,11 +61,12 @@ const UserLogin = () => {
               <i class="icon fas fa-lock"></i>
               <i class="error error-icon fas fa-exclamation-circle"></i>
             </div>
-            <p style={{ 'color': 'red' }}>
-              {err}
-            </p>
+
             <div class="error error-txt">Password can't be blank</div>
           </div>
+          <p style={{ color: 'red' }}>
+            {err}
+          </p>
           <button className='btn btn-primary' type="button" onClick={onLogin}>LOGIN</button>
           {/* <input type="submit" value="Login" onClick={onLogin} /> */}
         </form>

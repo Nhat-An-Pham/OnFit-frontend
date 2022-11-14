@@ -37,9 +37,9 @@ function Layout() {
           <Route path="/excercises" exact element={<Excercises />} />
         </Route>
         <Route element={<Outlet />}>
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/trainerlogin" element={<TrainerLogin />} />
-          <Route path="/userlogin" element={<UserLogin />} />
+          <Route path="/signup" exact element={<SignUp />} />
+          <Route path="/trainerlogin" exact element={<TrainerLogin />} />
+          <Route path="/userlogin" exact element={<UserLogin />} />
           <Route path="/user" exact element={<User />} />
           <Route path="/trainer" exact element={<Trainer />} />
         </Route>

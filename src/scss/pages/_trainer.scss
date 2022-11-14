@@ -12,22 +12,59 @@
 
 }
 
+.pageTrainer__container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
 .pageTrainer__usercard {
-    &--wrapper{
-        border: 4px black solid;
+    &--wrapper {
         height: 75vh;
         overflow: auto;
         // background-color: black;
     }
+
     &--container {
         margin: 20px 20px;
         height: auto;
         background: white;
         color: black;
         border-radius: 5px;
-        & h1{
+
+        & h4 {
             margin: 20px;
-            
+        }
+    }
+
+    &--container:hover {
+        cursor: pointer;
+        background: #f9735b;
+
+    }
+}
+
+.pageTrainer__section {
+    border: 4px black solid;
+    width: 30%;
+}
+
+.pageTrainer__section__item {
+    &--showUserInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &--item{
+        width:60%;
+
+        & h1{
+            text-align: center;
+            text-transform: uppercase;
+            margin: 3rem 0px;
+            font-size: 60px;
         }
     }
 }

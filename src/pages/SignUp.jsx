@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
 
   const navigator = useNavigate();
-
+  const [err, setErr] = useState("");
 
   //const
   const [email, setEmail] = useState('');
@@ -60,7 +60,7 @@ const SignUp = () => {
           navigator('/home');
         }
       })
-      .catch((e) => console.log("fail register test", e));
+      .catch((e) => setErr("Signing up Fail"));
     // const data  = {
     //   email: email,
     //   name: name,
@@ -137,6 +137,9 @@ const SignUp = () => {
                 <i class="error error-icon fas fa-exclamation-circle"></i>
               </div>
               <div class="error error-txt">Password can't be blank</div>
+              <p style={{ 'color': 'red' }}>
+                {err}
+              </p>
             </div>
             <button className='btn btn-primary' type="button" onClick={() => handleSave()} >Sign-Up Now</button>
             {/* <input type="submit" value="Login" onClick={onLogin} /> */}

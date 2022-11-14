@@ -22,7 +22,7 @@ class AuthService {
 
   loginTrainer({ phone, password }) {
     return axios
-      .post(API_URL + "login", {
+      .post(API_URL + "login/trainer", {
         phone,
         password
       })
