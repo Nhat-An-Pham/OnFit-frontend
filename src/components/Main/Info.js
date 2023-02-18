@@ -9,7 +9,8 @@ import Storebtn from "../GlobalComponents/Storebtn";
 const Info = () => (
   <div css={styles} className="info">
     <h1>
-      WORK HARDER, <span>GET STRONGER</span>
+      WORK HARDER <br/>
+      <span>GET STRONGER</span>
     </h1>
     <Link to="/signup">
       <Button text="BECOME A MEMBER" />
@@ -29,7 +30,7 @@ const styles = css`
   transform: translate(-50%, -50%);
   z-index: 2;
   text-align: center;
-  color: #fff;
+  color: #00AAFF;
   p {
     margin: 20px 0px;
   }
@@ -39,8 +40,8 @@ const styles = css`
     font-weight: 900;
     margin: 36px 0;
     span {
-      color: #232441;
-      text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #FFFFFF;
+      color: #131429;
+      text-shadow: -1px -1px 0 #00AAFF, 1px -1px 0 #00AAFF, -1px 1px 0 #00AAFF, 1px 1px 0 #00AAFF;
     }
   }
   .btn {

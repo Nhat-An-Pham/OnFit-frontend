@@ -32,7 +32,7 @@ const Contact = () => (
         </div>
       </div>
       <div class="footer-copyright">
-        <div>@Copyright FPT group 5</div>
+        <div>@Copyright by ONFIT corporation</div>
       </div>
     </footer>
   </section>

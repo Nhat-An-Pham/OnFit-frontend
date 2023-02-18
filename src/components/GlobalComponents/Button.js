@@ -12,13 +12,14 @@ const Button = ({ text }) => (
 const styles = css`
   text-decoration: none;
   display: inline-block;
-  background: #232441;
+  background: #00AAFF;
   color: #fff;
   font-size: 14px;
   padding: 12px 14px;
   transition: background 500ms ease-in-out;
   &:hover {
-    background: #f9735b;
+    background: #131429;
+    color: white;
   }
 `;
 

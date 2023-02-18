@@ -11,6 +11,8 @@ import SignUp from "../pages/SignUp"
 import Trainer from "../pages/Trainer";
 import TrainerLogin from "../pages/TrainerLogin";
 import Excercises from "../pages/Excercises";
+import Admin from "../pages/Admin";
+import AdminLogin from "../pages/AdminLogin";
 
 import authService from '../services/auth.service';
 import { useEffect, useState, useRef } from 'react';
@@ -41,6 +43,8 @@ function Layout() {
           <Route path="/trainerlogin" exact element={<TrainerLogin />} />
           <Route path="/userlogin" exact element={<UserLogin />} />
           <Route path="/user" exact element={<User />} />
+          <Route path="/admin" exact element={<Admin />} />
+          <Route path="/adminlogin" exact element={<AdminLogin />} />
           <Route path="/trainer" exact element={<Trainer />} />
         </Route>
       </Routes>

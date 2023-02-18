@@ -9,10 +9,8 @@ import { Link as ReactLink } from "react-router-dom";
 const LinksContainer = ({ hidden }) => {
   return (
     <div css={styles} className={(hidden ? "hidden" : "") + " linksContainer"}>
-        <Link name="HOME" linkTo="#home" />
-        <Link name="ABOUT" linkTo="#trainers" />
-        <Link name="CLASSES" linkTo="#ourClasses" />
-        <Link name="CONTACT" linkTo="#contact" />
+        <Link name="HOME" linkTo="/home" />
+        <Link name="CONTACT" linkTo="/contact" />
         <Link name="EXCERCISES" linkTo="/excercises" />
       <ReactLink to="/userlogin">
         <Button text="Join Us Now !" />

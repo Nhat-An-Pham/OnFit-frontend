@@ -3,6 +3,7 @@ import NavLogin from '../components/Navbar/NavLogin';
 import { useNavigate } from 'react-router-dom';
 import authService from '../services/auth.service';
 import Cookies from 'universal-cookie';
+import Popup from 'reactjs-popup';
 
 
 const UserLogin = () => {
@@ -40,40 +41,42 @@ const UserLogin = () => {
     <div className='page__login'>
       <NavLogin />
 
-      <div class="wrapper">
-        <header>Welcome to OnFit</header>
-        <form action="post">
-          <div class="field email">
-            <div class="input-area">
-              <input id="email" type="text" placeholder="Email" onChange={(e) => {
-                setEmail(e.target.value);
-              }} />
-              <i class="icon fas fa-envelope"></i>
-              <i class="error error-icon fas fa-exclamation-circle"></i>
+        <div class="wrapper">
+          <header>Welcome to OnFit</header>
+          <form action="post">
+            <div class="field email">
+              <div class="input-area">
+                <input id="email" type="text" placeholder="Email" onChange={(e) => {
+                  setEmail(e.target.value);
+                }} />
+                <i class="icon fas fa-envelope"></i>
+                <i class="error error-icon fas fa-exclamation-circle"></i>
+              </div>
+              <div class="error error-txt">Email can't be blank</div>
             </div>
-            <div class="error error-txt">Email can't be blank</div>
-          </div>
-          <div class="field password">
-            <div class="input-area">
-              <input id="password" type="password" placeholder="Password" onChange={(e) => {
-                setPassword(e.target.value);
-              }} />
-              <i class="icon fas fa-lock"></i>
-              <i class="error error-icon fas fa-exclamation-circle"></i>
-            </div>
+            <div class="field password">
+              <div class="input-area">
+                <input id="password" type="password" placeholder="Password" onChange={(e) => {
+                  setPassword(e.target.value);
+                }} />
+                <i class="icon fas fa-lock"></i>
+                <i class="error error-icon fas fa-exclamation-circle"></i>
+              </div>
 
-            <div class="error error-txt">Password can't be blank</div>
-          </div>
-          <p style={{ color: 'red' }}>
-            {err}
-          </p>
-          <button className='btn btn-primary' type="button" onClick={onLogin}>LOGIN</button>
-          {/* <input type="submit" value="Login" onClick={onLogin} /> */}
-        </form>
-        <h1>{loginStatus}</h1>
-        <div class="sign-txt">Not yet member? <a href="/signup">Sign-up now</a></div><br />
-        <div class="sign-txt">Are you a trainer? <a href="/trainerlogin">Sign-in here</a></div>
-      </div>
+              <div class="error error-txt">Password can't be blank</div>
+            </div>
+            <p style={{ color: 'red' }}>
+              {err}
+            </p>
+            <button className='btn btn-primary' type="button" onClick={onLogin}>LOGIN</button>
+            {/* <input type="submit" value="Login" onClick={onLogin} /> */}
+          </form>
+          <h1>{loginStatus}</h1>
+          <div class="sign-txt">Not yet member? <a href="/signup"> Sign-up now</a></div><br />
+
+          <div class="sign-txt">Are you a trainer? <a href="/trainerlogin"> Sign-in here</a></div>
+          <div class="sign-txt"><a href="/adminlogin">Admin</a></div><br />
+        </div>
     </div>
 
   )
