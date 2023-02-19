@@ -18,7 +18,7 @@ import authService from "../services/auth.service";
 import EditModalBodyStatus from "../components/Utils/EditModalBodyStatus";
 import SidebarUser from "../components/Sidebar/SidebarUser";
 
-const User = () => {
+const UserBodyStatus = () => {
 
   const [cusInfo, setCusInfo] = useState("")
   const [bodyStat, setbodyStat] = useState("")
@@ -145,6 +145,23 @@ const User = () => {
       <NavUser />
       <SidebarUser/>
       <div className="userContainer">
+                <div className="content">
+                    <div className="information__wrapper">
+                        <div className="information__wrapper__item">
+                            <h5>Height: <span className="text">171cm</span></h5>
+                        </div>
+                        <div className="information__wrapper__item">
+                            <h5>Weight: <span className="text">80kg</span></h5>
+                        </div>
+                        <div className="information__wrapper__item">
+                            <h5>Email: <span className="text">hoangkim@gmail.com</span></h5>
+                        </div>
+                        
+                    </div>
+                    <div className="testImg">
+                        <img src={require("../assets/data/331729784_3416608401884857_8252347125711144058_n.jpg")} alt="" />
+                    </div>
+                </div>
       </div>
       {/* first Section */}
       {/* <section className="user__section user__section--firstSect">
@@ -277,4 +294,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default UserBodyStatus;

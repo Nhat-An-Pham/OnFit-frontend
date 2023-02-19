@@ -1,8 +1,10 @@
-.sidebar {
-    flex: 1;
-    border-right: 0.5px solid rgb(230, 227, 227);
+.sidebarUser {
+    // flex: 1;
+    // border-right: 0.5px solid rgb(230, 227, 227);
+    flex: 1 1;
     min-height: 100vh;
-    background-color: white;
+    height: 100px;
+    background-color: #131429;
   
     .top {
       height: 50px;
@@ -19,11 +21,12 @@
   
     hr {
       height: 0;
-      border: 0.5px solid rgb(230, 227, 227);
+    //   border: 0.5px solid rgb(230, 227, 227);
     }
   
     .center {
       padding-left: 10px;
+      padding-top: 30px;
   
       ul {
         list-style: none;
@@ -31,9 +34,9 @@
         padding: 0;
   
         .title {
-          font-size: 10px;
+          font-size: 20px;
           font-weight: bold;
-          color: #999;
+          color: white;
           margin-top: 15px;
           margin-bottom: 5px;
         }
@@ -45,7 +48,7 @@
           cursor: pointer;
   
           &:hover {
-            background-color: #ece8ff;
+            background-color: #00AAFF;
           }
   
           .icon {
@@ -54,9 +57,9 @@
           }
   
           span{
-              font-size: 13px;
+              font-size: 20px;
               font-weight: 600;
-              color: #888;
+              color: white;
               margin-left: 10px;
           }
         }

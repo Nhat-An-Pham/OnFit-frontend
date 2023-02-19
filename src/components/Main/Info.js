@@ -9,13 +9,14 @@ import Storebtn from "../GlobalComponents/Storebtn";
 const Info = () => (
   <div css={styles} className="info">
     <h1>
-      WORK HARDER <br/>
+      WORK HARDER <br />
       <span>GET STRONGER</span>
     </h1>
     <Link to="/signup">
       <Button text="BECOME A MEMBER" />
     </Link>
     <p>GET US ON</p>
+    
     <Storebtn text="APPSTORE" />
     <Storebtn text="CH PLAY" />
   </div>

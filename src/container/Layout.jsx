@@ -7,6 +7,8 @@ import Cookies from 'js-cookie'
 import Home from "../pages/Home";
 import UserLogin from "../pages/UserLogin";
 import User from "../pages/User";
+import UserInformation from "../pages/UserInformation";
+import UserBodyStatus from "../pages/UserBodyStatus";
 import SignUp from "../pages/SignUp"
 import Trainer from "../pages/Trainer";
 import TrainerLogin from "../pages/TrainerLogin";
@@ -41,8 +43,12 @@ function Layout() {
         <Route element={<Outlet />}>
           <Route path="/signup" exact element={<SignUp />} />
           <Route path="/trainerlogin" exact element={<TrainerLogin />} />
+
           <Route path="/userlogin" exact element={<UserLogin />} />
           <Route path="/user" exact element={<User />} />
+          <Route path="/user/information" exact element={<UserInformation />} />
+          <Route path="/user/bodystatus" exact element={<UserBodyStatus />} />
+
           <Route path="/admin" exact element={<Admin />} />
           <Route path="/adminlogin" exact element={<AdminLogin />} />
           <Route path="/trainer" exact element={<Trainer />} />

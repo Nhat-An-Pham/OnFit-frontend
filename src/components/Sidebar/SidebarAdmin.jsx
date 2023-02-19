@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 
-const Sidebar = () => {
+const SidebarAdmin = () => {
     return (
-        <div className="sidebar">
+        <div className="sidebarAdmin">
             <div className="top">
                 <Link to="/" style={{ textDecoration: "none" }}>
                     <span className="logo">ONFIT</span>
@@ -33,4 +33,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default SidebarAdmin;
